@@ -1,0 +1,8 @@
+import drools.example.drools.entity.Product;
+
+rule "Offer for Diamon"
+    when productObject: Product(type.equals("Diamond"))
+
+    then productObject.setDiscount(15);
+
+end

@@ -1,0 +1,15 @@
+
+import drools.example.drools.entity.TaxiRide;
+import drools.example.drools.entity.Fare;
+import java.util.*;
+
+global drools.example.drools.entity.Fare rideFare;
+dialect  "mvel"
+
+rule "Calculate Taxi Fare - Scenario 1"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile < 10);
+    then
+       	rideFare.setNightSurcharge(Long.valueOf(0));
+       	rideFare.setRideFare(Long.valueOf(70));
+end
