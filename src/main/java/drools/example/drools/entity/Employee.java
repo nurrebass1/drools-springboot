@@ -5,5 +5,7 @@ import lombok.Data;
 @Data
 public class Employee {
 
-    String name;
+    private String name;
+    private String status;
+    private TimeSheet hours;
 }

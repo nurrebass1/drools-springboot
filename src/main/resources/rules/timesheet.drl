@@ -1,3 +1,15 @@
-import drools.example.drools.entity.Employee;
+import drools.example.drools.entity.*;
 
+global drools.example.drools.entity.Employee employee;
+
+dialect  "mvel"
+
+rule "Fire employee if the employee works less than 40h a week"
+
+    when
+        employeeHours: TimeSheet(hours < 40)
+
+    then
+        employee.setStatus("Fired");
+end
 

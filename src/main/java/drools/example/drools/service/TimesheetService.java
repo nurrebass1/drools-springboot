@@ -13,13 +13,13 @@ public class TimesheetService {
     @Autowired
     KieContainer kieContainer;
 
-    public String getWokringHours(Employee employee, TimeSheet timeSheet) {
+    public String getWorkingHours(Employee employee, TimeSheet timeSheet) {
         KieSession kieSession = this.kieContainer.newKieSession();
         kieSession.setGlobal("employee", employee);
         kieSession.insert(timeSheet);
         kieSession.fireAllRules();
         kieSession.dispose();
 
-        return employee.getName();
+        return employee.getStatus();
     }
 }
