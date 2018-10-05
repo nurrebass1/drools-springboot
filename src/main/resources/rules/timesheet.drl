@@ -1,4 +1,5 @@
 import drools.example.drools.entity.*;
+import drools.example.drools.util.DroolsLogger;
 
 global drools.example.drools.entity.Employee employee;
 
@@ -13,3 +14,14 @@ rule "Fire employee if the employee works less than 40h a week"
         employee.setStatus("Fired");
 end
 
+
+rule "Employee has day off when the manager BOB is at work"
+
+    when
+        $employee: Employee($productOwners: productOwners)
+        $productOwner: ProductOwner(type.equals("BOB")) from $productOwners
+
+    then
+        $employee.setDayOffWork(true);
+        DroolsLogger.helper(drools);
+end

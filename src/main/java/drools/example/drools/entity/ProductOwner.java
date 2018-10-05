@@ -3,9 +3,8 @@ package drools.example.drools.entity;
 import lombok.Data;
 
 @Data
-public class Product {
+public class ProductOwner {
 
+    private String name;
     private String type;
-    private int discount;
-
 }

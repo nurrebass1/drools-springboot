@@ -2,6 +2,7 @@ package drools.example.drools.service;
 
 import drools.example.drools.config.DroolsConfig;
 import drools.example.drools.entity.Product;
+import drools.example.drools.entity.ProductOwner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = DroolsConfig.class)
-public class ProductServiceTest {
+public class ProductOwnerServiceTest {
 
     @Autowired
     ProductService productService;
@@ -22,8 +23,8 @@ public class ProductServiceTest {
     public void getProductDiscount_should_return_15() {
         Product product = new Product();
         product.setType("Diamond");
-        int disount = this.productService.getProductDiscount(product);
+        int discount = this.productService.getProductDiscount(product);
 
-        assertThat(disount, is(15));
+        assertThat(discount, is(15));
     }
 }
