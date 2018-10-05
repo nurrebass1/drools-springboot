@@ -3,8 +3,6 @@ import drools.example.drools.util.DroolsLogger;
 
 global drools.example.drools.entity.Employee employee;
 
-dialect  "mvel"
-
 rule "Fire employee if the employee works less than 40h a week"
 
     when

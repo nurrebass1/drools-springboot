@@ -7,5 +7,4 @@ public class DroolsLogger {
     public static void helper(final KnowledgeHelper drools){
         System.out.println("\nrule triggered: " + drools.getRule().getName());
     }
-
 }
